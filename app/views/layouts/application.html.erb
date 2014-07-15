@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @titulo %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="container">
+	<!--Le indicamod que comenzamos con una nueva línea-->
+	<div class="row">
+		<!--Espacio de dos columnas para el LOGO-->
+		<div class="span2">
+		<%= link_to image_tag("LPCLogo.jpg", :size=>"215x125", :alt=>"logo"), {:action=>"index"} %>	
+		</div>
+		<!-- Fin logotipo-->
+
+		<!-- Espacio de seis columnas para el menú principal-->
+		<div class="span6 offset2">
+			<ul class="nav nav-pills">
+			<li class="active"><%= link_to "LPC", root_path, :class=>"current" %></li>
+			<li><%= link_to "ATE", :action=>"quienes_somos" %></li>
+			<li><%= link_to "Seguridad", :action=>"servicios" %></li>
+			<li><%= link_to "Software", :action=>"localizacion" %></li>
+			<li><%= link_to "Contacto", :action=>"contacto" %></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Contenido de los métodos -->
+	<div class="row">
+		<%= yield %>
+	</div>
+	<!-- Fin contenido métodos-->
+
+	<!-- Contenidos Seleccionados-->
+	<div class="row">
+		<div class="span3">
+			<h2>ATE</h2>
+			<p>Certificación ATE</p>
+		</div>
+		<div class="span3">
+			<h2>Seguridad</h2>
+			<p>Entrenamiento en Seguridad</p>
+		</div>
+		<div class="span3">
+			<h2>Software</h2>
+			<p>CUBO + Ruby on Rails</p>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
